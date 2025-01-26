@@ -10,7 +10,6 @@ export default function GetStartedPage() {
                 <h1 className="text-4xl font-bold text-black text-center mb-8">
                     Get Started
                 </h1>
-                
 
                 <div className="max-w-6xl mx-auto">
 

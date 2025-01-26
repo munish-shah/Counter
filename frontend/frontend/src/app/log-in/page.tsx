@@ -1,10 +1,10 @@
-import { SignUp } from "@clerk/nextjs";
+import { SignIn } from "@clerk/nextjs";
 
-export default function SignUpPage() {
+export default function SignInPage() {
   return (
     <main className="min-h-screen bg-white flex items-center justify-center">
       <div className="p-8">
-        <SignUp 
+        <SignIn 
           appearance={{
             elements: {
               formButtonPrimary: 

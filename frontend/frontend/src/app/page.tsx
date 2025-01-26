@@ -12,7 +12,7 @@ export default async function HomePage() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
           <Link
             className="flex max-w-xs flex-col gap-4 rounded-xl bg-gray-100 p-4 text-black hover:bg-gray-200"
-            href="/features"
+            href="/about"
           >
             <h3 className="text-2xl font-bold">About →</h3>
             <div className="text-lg">

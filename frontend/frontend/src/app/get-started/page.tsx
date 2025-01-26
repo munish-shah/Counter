@@ -48,7 +48,7 @@ export default function GetStartedPage() {
                             Back to Home
                         </a>
                         <a
-                            href="../sign-up"
+                            href="../signup"
                             className="bg-gray-100 px-6 py-3 rounded-lg text-black hover:bg-gray-200"
                         >
                             Sign Up Now
@@ -66,7 +66,7 @@ export default function GetStartedPage() {
 
                     <div className="flex justify-center gap-4 mb-8">
                         <a
-                            href="../log-in"
+                            href="../login"
                             className="bg-gray-100 px-6 py-3 rounded-lg text-black hover:bg-gray-200"
                         >
                             Log In

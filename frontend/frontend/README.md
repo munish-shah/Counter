@@ -49,3 +49,12 @@ Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/ver
 
 - [Docker](https://docs.docker.com/get-docker/)
 - Node.js 18+ and npm
+
+
+frontend/frontend/src/app/
+├── page.tsx          // Homepage (/)
+├── about/
+│   └── page.tsx     // About page (/about)
+├── contact/
+│   └── page.tsx     // Contact page (/contact)
+└── layout.tsx        // Shared layout for all pages

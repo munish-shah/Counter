@@ -9,7 +9,7 @@ export default async function HomePage() {
           Counter
         </h1>
         
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-8">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
           <Link
             className="flex max-w-xs flex-col gap-4 rounded-xl bg-gray-100 p-4 text-black hover:bg-gray-200"
             href="/about"
@@ -20,7 +20,7 @@ export default async function HomePage() {
             </div>
           </Link>
           
-          <Link
+          {/* <Link
             className="flex max-w-xs flex-col gap-4 rounded-xl bg-gray-100 p-4 text-black hover:bg-gray-200"
             href="/get-started"
           >
@@ -28,7 +28,7 @@ export default async function HomePage() {
             <div className="text-lg">
               Get setup with our product in minutes
             </div>
-          </Link>
+          </Link> */}
 
           <Link
             className="flex max-w-xs flex-col gap-4 rounded-xl bg-gray-100 p-4 text-black hover:bg-gray-200"

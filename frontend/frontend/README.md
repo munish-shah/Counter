@@ -27,3 +27,25 @@ You can check out the [create-t3-app GitHub repository](https://github.com/t3-os
 ## How do I deploy this?
 
 Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+
+## Getting Started
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Start the database:
+   ```bash
+   ./start-database.sh
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Requirements
+
+- [Docker](https://docs.docker.com/get-docker/)
+- Node.js 18+ and npm

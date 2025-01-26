@@ -10,6 +10,10 @@
 # On Linux and macOS you can run this script directly - `./start-database.sh`
 
 DB_CONTAINER_NAME="frontend-postgres"
+DB_NAME="frontend"
+DB_USER="postgres"
+DB_PASSWORD="postgres"
+DB_PORT=5432
 
 if ! [ -x "$(command -v docker)" ]; then
   echo -e "Docker is not installed. Please install docker and try again.\nDocker install guide: https://docs.docker.com/engine/install/"
@@ -32,29 +36,12 @@ if [ "$(docker ps -q -a -f name=$DB_CONTAINER_NAME)" ]; then
   exit 0
 fi
 
-# import env variables from .env
-set -a
-source .env
-
-DB_PASSWORD=$(echo "$DATABASE_URL" | awk -F':' '{print $3}' | awk -F'@' '{print $1}')
-DB_PORT=$(echo "$DATABASE_URL" | awk -F':' '{print $4}' | awk -F'\/' '{print $1}')
-
-if [ "$DB_PASSWORD" = "password" ]; then
-  echo "You are using the default database password"
-  read -p "Should we generate a random password for you? [y/N]: " -r REPLY
-  if ! [[ $REPLY =~ ^[Yy]$ ]]; then
-    echo "Please change the default password in the .env file and try again"
-    exit 1
-  fi
-  # Generate a random URL-safe password
-  DB_PASSWORD=$(openssl rand -base64 12 | tr '+/' '-_')
-  sed -i -e "s#:password@#:$DB_PASSWORD@#" .env
-fi
-
-docker run -d \
-  --name $DB_CONTAINER_NAME \
-  -e POSTGRES_USER="postgres" \
+docker run --name "$DB_CONTAINER_NAME" \
   -e POSTGRES_PASSWORD="$DB_PASSWORD" \
-  -e POSTGRES_DB=frontend \
+  -e POSTGRES_USER="$DB_USER" \
+  -e POSTGRES_DB="$DB_NAME" \
   -p "$DB_PORT":5432 \
-  docker.io/postgres && echo "Database container '$DB_CONTAINER_NAME' was successfully created"
+  -d postgres:15
+
+echo "Database container '$DB_CONTAINER_NAME' started"
+echo "DATABASE_URL=postgresql://$DB_USER:$DB_PASSWORD@localhost:$DB_PORT/$DB_NAME"

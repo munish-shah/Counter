@@ -4,8 +4,8 @@ import { type Metadata } from "next";
 import "~/styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "Your Website Name",
-  description: "Description of your website",
+  title: "Counter",
+  description: "Tinder for Furniture",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
